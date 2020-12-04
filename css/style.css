@@ -4,8 +4,23 @@
     
 }
 body{
-    cursor: url('../img/bg.ico'),auto;
+    cursor: url('../img/bg2.ico'),auto;
 }
+
+.clickbox{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background:#ffffff;
+    position:absolute;
+    z-index:999;
+    animation: ani1 2s ease-out;
+}
+@keyframes ani1{
+    0% {opacity: 1;}
+    100%{opacity: 0;transform: translateY(100px);}
+}
+
 a,a:hover,a:active,a:visited,a:link,a:focus{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;

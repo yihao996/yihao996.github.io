@@ -18,4 +18,29 @@
         </div>
     </div>
 </body>
+<script>
+    var boxid=0
+    document.body.onmousedown = function(ev){
+        document.body.onmousemove = function(ev){
+             var oevent =ev||event;
+            var box = document.createElement("div")
+            box.id="box"+boxid
+            box.classList="clickbox"
+            box.style="left:"+oevent.clientX+"px;top:"+oevent.clientY+"px"
+            document.body.appendChild(box)
+            setTimeout(()=>{document.body.removeChild(box)},1900)
+            boxid+=1
+            document.body.onmouseup = function(){
+        　　　　document.body.onmousemove = null;
+        　　　　document.body.onmouseup = null;
+        　　};
+        console.log(document.body.clientHeight)
+        //     if(oevent.clientX>=document.body.clientWidth||oevent.clientY>=document.body.clientHeight){
+        //         document.body.onmousemove = null;
+        // 　　　　document.body.onmouseup = null;
+        //     }
+        }
+       
+    }
+</script>
 </html>
